@@ -16,11 +16,8 @@ link:
 clean:
 	rm -rf $(O_FILE) $(OUT_LIB)
 
-install:
-	build
-	link
+install: build link
 	mkdir -p $(HEADER_PATH)
 	mkdir -p $(LIB_PATH)
 	cp $(H_FILES) $(HEADER_PATH)
 	cp $(OUT_LIB) $(LIB_PATH)
-	clean
