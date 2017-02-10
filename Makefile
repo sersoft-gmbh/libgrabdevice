@@ -1,10 +1,12 @@
 CC = clang
 CFLAGS = -fPIC
-H_FILES = libgrabdevice/libgrabdevice.h
-C_FILES = libgrabdevice/libgrabdevice.c
-O_FILE = libgrabdevice/libgrabdevice.o
+H_FILES = src/grabdevice.h
+C_FILES = src/grabdevice.c
+O_FILE = src/grabdevice.o
+
 OUT_LIB = libgrabdevice.so
-HEADER_PATH = /usr/local/include/libgrabdevice/
+
+HEADER_PATH = /usr/local/include/
 LIB_PATH = /usr/local/lib/
 
 build: $(FILES)
