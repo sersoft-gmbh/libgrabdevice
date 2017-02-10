@@ -2,19 +2,19 @@ CC = clang
 CFLAGS = -fPIC
 H_FILES = libgrabdevice/libgrabdevice.h
 C_FILES = libgrabdevice/libgrabdevice.c
-O_FILES = libgrabdevice/libgrabdevice.o
+O_FILE = libgrabdevice/libgrabdevice.o
 OUT_LIB = libgrabdevice.so
 HEADER_PATH = /usr/local/include/libgrabdevice/
 LIB_PATH = /usr/local/lib/
 
 build: $(FILES)
-	$(COMPILE.c) $(C_FILES)
+	$(COMPILE.c) $(C_FILES) -o $(O_FILE)
 
 link:
-	$(CC) -shared -o $(OUT_LIB) $(O_FILES)
+	$(CC) -shared -o $(OUT_LIB) $(O_FILE)
 
 clean:
-	rm -rf libgrabdevice/*.o *.so
+	rm -rf $(O_FILE) $(OUT_LIB)
 
 install:
 	build
